@@ -59,7 +59,7 @@ const translations = {
     faq: 'FAQ',
     video_description: 'Visites virtuelles de drone en intérieur',
     video_text:
-      "Nous volons en intérieur avec de petits drones pour créer visite virtuelle en vidéo sans précédent pour l'immobilier, les entreprises, les hôtels, et bien plus encore.",
+      "Nous volons en intérieur avec de petits drones pour créer une visite virtuelle vidéo sans précédent pour l'immobilier, les entreprises, les hôtels, et bien plus encore.",
     get_started: "Commencez aujourd'hui",
     who_we_are: 'Qui sommes-nous',
     company_description:
@@ -103,6 +103,10 @@ const translations = {
     loading_battery: 'On branche la batterie',
     loading_camera: 'On allume la caméra',
     loading_takeoff: 'Et on se prépare au décollage',
+    fly_everywhere_title: 'Voler partout',
+    fly_everywhere_description: 'Ceci est notre devise',
+    showreel_title: 'Visionner notre savoir-faire',
+    showreel_description: 'à travers cette vidéo qui montre',
   },
 };
 
