@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { HoveredLink, Menu, MenuItem, ProductItem } from './aceternity/navbar-menu';
+import { HoveredLink, Menu, MenuItem, ProductItem } from '@/components/aceternity/navbar-menu';
 import { cn } from '@/lib/utils';
 
 export function Navbar({ className }: { className?: string }) {
