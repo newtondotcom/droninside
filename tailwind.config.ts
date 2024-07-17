@@ -77,7 +77,7 @@ const config: Config = {
     },
   },
   darkMode: 'class',
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, require("tailwindcss-animate")],
 };
 export default config;
 
