@@ -29,6 +29,15 @@ export default function Home() {
             </>
           }
         >
+          <div className="flex">Video placeholder</div>
+        </ContainerScroll>
+      </div>
+    </div>
+  );
+}
+
+/*
+
           <video
             src={`/video.mp4`}
             height={720}
@@ -39,8 +48,4 @@ export default function Home() {
             muted={true}
             loop={true}
           />
-        </ContainerScroll>
-      </div>
-    </div>
-  );
-}
+          */
