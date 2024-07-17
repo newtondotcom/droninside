@@ -60,6 +60,7 @@ export function Navbar({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
+        <a href="/faq">{translate('faq')}</a>
       </Menu>
     </div>
   );
