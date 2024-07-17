@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { IconBrandYoutubeFilled } from '@tabler/icons-react';
 import Link from 'next/link';
+import translate from '@/lib/trad';
 
 export function FeaturesSectionDemo() {
   const features = [
@@ -22,16 +23,14 @@ export function FeaturesSectionDemo() {
       className: 'border-b col-span-1 lg:col-span-2 dark:border-neutral-800',
     },
     {
-      title: 'Watch our AI on YouTube',
-      description:
-        'Whether its you or Tyler Durden, you can get to know about our product on YouTube',
+      title: translate('showreel_title'),
+      description: translate('showreel_description'),
       skeleton: <SkeletonThree />,
       className: 'col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800',
     },
     {
-      title: 'Deploy in seconds',
-      description:
-        'With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.',
+      title: translate('fly_everywhere_title'),
+      description: translate('fly_everywhere_description'),
       skeleton: <SkeletonFour />,
       className: 'col-span-1 lg:col-span-3 border-b lg:border-none',
     },
@@ -40,12 +39,11 @@ export function FeaturesSectionDemo() {
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto ">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Packed with thousands of features
+          {translate('video_description')}
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          From Image generation to video generation, Everything AI has APIs for literally
-          everything. It can even create this website copy for you.
+          {translate('video_text')}
         </p>
       </div>
 
@@ -121,7 +119,7 @@ export const SkeletonOne = () => {
 export const SkeletonThree = () => {
   return (
     <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+      href="https://www.youtube.com/watch?v=TTYi8xfwReI"
       target="__blank"
       className="relative flex gap-10  h-full group/image"
     >
@@ -130,7 +128,7 @@ export const SkeletonThree = () => {
           {/* TODO */}
           <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
           <Image
-            src="https://assets.aceternity.com/fireship.jpg"
+            src={'/showreel.jpg'}
             alt="header"
             width={800}
             height={800}
