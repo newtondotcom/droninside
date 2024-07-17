@@ -1,8 +1,8 @@
 'use client';
-import { Navbar } from './components/navbar';
-import { ContainerScroll } from './components/container-scroll-animation';
-import { FeaturesSectionDemo } from './components/bento-grid';
-import { TypewriterEffectSmoothDemo } from './components/typewriter';
+import { Navbar } from '@/components/navbar';
+import { ContainerScroll } from '@/components/container-scroll-animation';
+import { FeaturesSectionDemo } from '@/components/bento-grid';
+import { TypewriterEffectSmoothDemo } from '@/components/typewriter';
 
 export default function Home() {
   return (
