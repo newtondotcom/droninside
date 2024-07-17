@@ -60,6 +60,19 @@ export const MenuItem = ({
   );
 };
 
+export const MenuLink = ({ children }: { children?: React.ReactNode }) => {
+  return (
+    <div className="relative ">
+      <motion.p
+        transition={{ duration: 0.3 }}
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+      >
+        {children}
+      </motion.p>
+    </div>
+  );
+};
+
 export const Menu = ({
   setActive,
   children,
@@ -72,7 +85,7 @@ export const Menu = ({
       onMouseLeave={() => setActive(null)} // resets the state
       className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
     >
-      <div className="flex text-primary font-semibold">DronInside</div>
+      <div className="flex text-primary font-semibold cursor-default">DronInside</div>
       {children}
     </nav>
   );

@@ -1,7 +1,14 @@
 'use client';
 import React, { useState } from 'react';
-import { HoveredLink, Menu, MenuItem, ProductItem } from '@/components/aceternity/navbar-menu';
+import {
+  HoveredLink,
+  Menu,
+  MenuItem,
+  ProductItem,
+  MenuLink,
+} from '@/components/aceternity/navbar-menu';
 import { cn } from '@/lib/utils';
+import translate from '@/lib/trad';
 
 export function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -13,15 +20,19 @@ export function Navbar({ className }: { className?: string }) {
       )}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuLink>
+          <a href="/">{translate('home')}</a>
+        </MenuLink>
+        <MenuItem setActive={setActive} active={active} item={translate('services')}>
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/services/residential">{translate('residential')}</HoveredLink>
+            <HoveredLink href="/services/local_business">{translate('local_business')}</HoveredLink>
+            <HoveredLink href="/services/hostel">{translate('hostel')}</HoveredLink>
+            <HoveredLink href="/services/construction">{translate('construction')}</HoveredLink>
+            <HoveredLink href="/services/office">{translate('office')}</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
+        <MenuItem setActive={setActive} active={active} item={translate('portfolio')}>
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
@@ -47,14 +58,6 @@ export function Navbar({ className }: { className?: string }) {
               src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
