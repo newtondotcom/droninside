@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { useState, useEffect } from "react";
 import HandWrittenWord from "@/components/kokonutui/hand-written-word";
 import { useTranslations } from "next-intl";
@@ -17,7 +17,7 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const droneVariants = {
+  const droneVariants: Variants = {
     offscreen: {
       x: -500,
       opacity: 0,

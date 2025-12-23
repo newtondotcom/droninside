@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 interface HandWrittenTitleProps {
     title?: string;
     subtitle?: string;
@@ -45,7 +45,7 @@ export default function HandWrittenTitle({
                         stroke="currentColor"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        variants={draw}
+                        variants={draw as Variants}
                         className="text-black dark:text-white opacity-90"
                     />
                 </motion.svg>

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import links from "@/lib/data/links";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import Logo from "@/components/ui/logo";
 import LocalePicker from "@/components/layout/locale-picker";
 import { useTranslations } from "next-intl";
@@ -20,7 +20,7 @@ export default function Header() {
 
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
-  const mobileMenuVariants = {
+  const mobileMenuVariants: Variants = {
     open: {
       opacity: 1,
       y: 0,

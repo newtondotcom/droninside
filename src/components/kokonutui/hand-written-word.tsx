@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { Pacifico } from "next/font/google";
 
 const pacifico = Pacifico({
@@ -18,7 +18,7 @@ interface HandWrittenTitleProps {
 export default function HandWrittenWord({
   word = "DronInside",
 }: HandWrittenTitleProps) {
-  const draw = {
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {
       pathLength: 1,
