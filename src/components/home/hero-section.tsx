@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import HandWrittenWord from "@/components/kokonutui/hand-written-word";
 import { useTranslations } from "next-intl";
 import Drone from "@/components/layout/drone";
+import { StripedPattern } from "@/components/magicui/stripped-patterns";
 
 export default function HeroSection() {
   const t = useTranslations("HomePage");
@@ -40,6 +41,7 @@ export default function HeroSection() {
       id="hero"
       className="h-screen w-full snap-start flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-background to-background/80"
     >
+      <StripedPattern className="[-webkit-mask-image:radial-gradient(420px_circle_at_top_right,white,transparent)] [mask-image:radial-gradient(420px_circle_at_top_right,white,transparent)] z-0" />
       <motion.div
         className="flex text-center max-w-4xl px-6 mt-20"
         initial={{ opacity: 0 }}

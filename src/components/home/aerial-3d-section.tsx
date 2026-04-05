@@ -3,14 +3,14 @@
 import type React from "react";
 
 import { motion, type HTMLMotionProps } from "motion/react";
-import { LandPlot, Mountain, Camera} from "lucide-react";
+import { LandPlot, Mountain, Camera } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { useTranslations } from "next-intl";
 import Btn13 from "@/components/kokonutui/btn-13";
 import { MagicCard } from "@/components/magicui/magic-card";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useTheme } from "next-themes";
 
 type ServiceCardProps = {
@@ -35,41 +35,38 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-  <motion.div
-    initial={animation.initial}
-    animate={animation.animate}
-    transition={animation.transition}
-    viewport={{ once: false }}
-    className="flex flex-col"
-  >
-    <Card className="w-full max-w-sm border-none p-0 shadow-none">
-      <MagicCard
-        gradientColor={isDark ? "#262626" : "#D9D9D955"}
-        className="p-0"
-      >
-        <CardHeader className="border-border border-b p-4 [.border-b]:pb-4">
-      <div className="flex items-center mb-4">
-        <div className="bg-primary/10 p-2 rounded-full mr-4">{icon}</div>
-        <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
-      </div>
-      </CardHeader>
-      <CardContent className="space-y-2 p-4">
-      <span className="hidden md:flex text-neutral-600 dark:text-neutral-300 mb-4 prose min-h-[250px]">
-        <Markdown>{description}</Markdown>
-      </span>
-      <div className="hidden md:flex my-auto relative md:h-48 w-full rounded-lg overflow-hidden">
-        <Image
-          src={imageSrc || "/placeholder.svg"}
-          alt={title}
-          fill
-          sizes="full"
-          className="object-cover"
-        />
-      </div>
-      </CardContent>
-    </MagicCard>
-    </Card>
-  </motion.div>
+    <motion.div
+      initial={animation.initial}
+      animate={animation.animate}
+      transition={animation.transition}
+      viewport={{ once: false }}
+      className="flex flex-col"
+    >
+      <Card className="w-full max-w-sm border-none p-0 shadow-none">
+        <MagicCard gradientColor={isDark ? "#262626" : "#D9D9D955"} className="p-0">
+          <CardHeader className="border-border border-b p-4 [.border-b]:pb-4">
+            <div className="flex items-center mb-4">
+              <div className="bg-primary/10 p-2 rounded-full mr-4">{icon}</div>
+              <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-2 p-4">
+            <span className="hidden md:flex text-neutral-600 dark:text-neutral-300 mb-4 prose min-h-[250px]">
+              <Markdown>{description}</Markdown>
+            </span>
+            <div className="hidden md:flex my-auto relative md:h-48 w-full rounded-lg overflow-hidden">
+              <Image
+                src={imageSrc || "/placeholder.svg"}
+                alt={title}
+                fill
+                sizes="full"
+                className="object-cover"
+              />
+            </div>
+          </CardContent>
+        </MagicCard>
+      </Card>
+    </motion.div>
   );
 };
 
