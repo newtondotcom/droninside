@@ -1,8 +1,10 @@
- pre-commit:
-   parallel: false
-   jobs:
-     - name: lint
-       run: bun lint:fix {staged_files}
+pre-commit:
+  parallel: false
+  jobs:
+    - name: lint
+      run: bun lint:fix {staged_files}
+      stage_fixed: true
 
-     - name: fmt
-       run: bun fmt:write {staged_files}
+    - name: fmt
+      run: bun fmt:write {staged_files}
+      stage_fixed: true
