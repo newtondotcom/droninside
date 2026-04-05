@@ -1,5 +1,5 @@
 "use client";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { HeroVideoDialog } from "@/components/magicui/hero-video-dialog";
 import Title from "@/components/layout/title";
 import videos from "@/lib/data/videos";
 import { useTranslations } from "next-intl";
@@ -11,10 +11,7 @@ export default function Portfolio() {
 
   return (
     <div className="flex flex-col mt-20">
-      <Title
-        title={t("title") || "Portfolio"}
-        subtitle={t("subtitle") || "Our previous work"}
-      />
+      <Title title={t("title") || "Portfolio"} subtitle={t("subtitle") || "Our previous work"} />
       <div className="grid grid-cols-1 gap-2 px-4 md:grid-cols-2 md:px-24 lg:grid-cols-4">
         {videos.map((video) => (
           <div key={video.id} className="mx-4 my-4 shrink">
