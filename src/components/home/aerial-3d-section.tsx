@@ -7,9 +7,11 @@ import { LandPlot, Mountain, Camera} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import { useTranslations } from "next-intl";
 import Btn13 from "@/components/kokonutui/btn-13";
+import { MagicCard } from "@/components/magicui/magic-card";
+import { Card, CardContent, CardHeader } from "../ui/card";
+import { useTheme } from "next-themes";
 
 type ServiceCardProps = {
   icon: React.ReactNode;
@@ -29,7 +31,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   imageSrc,
   animation,
-}) => (
+}) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  return (
   <motion.div
     initial={animation.initial}
     animate={animation.animate}
@@ -37,17 +42,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     viewport={{ once: false }}
     className="flex flex-col"
   >
-    <NeonGradientCard
-      className="max-w-sm items-center justify-between text-center"
-      neonColors={{
-        firstColor: "oklch(84.1% 0.238 128.85)",
-        secondColor: "oklch(79.2% 0.209 151.711)",
-      }}
-    >
+    <Card className="w-full max-w-sm border-none p-0 shadow-none">
+      <MagicCard
+        gradientColor={isDark ? "#262626" : "#D9D9D955"}
+        className="p-0"
+      >
+        <CardHeader className="border-border border-b p-4 [.border-b]:pb-4">
       <div className="flex items-center mb-4">
         <div className="bg-primary/10 p-2 rounded-full mr-4">{icon}</div>
         <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
       </div>
+      </CardHeader>
+      <CardContent className="space-y-2 p-4">
       <span className="hidden md:flex text-neutral-600 dark:text-neutral-300 mb-4 prose min-h-[250px]">
         <Markdown>{description}</Markdown>
       </span>
@@ -60,9 +66,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           className="object-cover"
         />
       </div>
-    </NeonGradientCard>
+      </CardContent>
+    </MagicCard>
+    </Card>
   </motion.div>
-);
+  );
+};
 
 export default function Aerial3DSection() {
   const t = useTranslations("Aerial3DSection");
@@ -83,7 +92,7 @@ export default function Aerial3DSection() {
       icon: <Mountain className="h-8 w-8 text-primary" />,
       title: t("exterior_3d_title"),
       description: t("exterior_3d_description"),
-      imageSrc: "/photogrammetry.jpg",
+      imageSrc: "/photogrammetry.png",
       animation: {
         initial: { opacity: 0, y: 50 },
         animate: { opacity: 1, y: 0 },

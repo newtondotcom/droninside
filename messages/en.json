@@ -126,15 +126,15 @@
     "choose_service": "Choose a service"
   },
   "Aerial3DSection": {
-    "aerial_3d_title": "Beyond Indoor Flights: Aerial Photography & 3D Modeling",
-    "aerial_3d_subtitle": "We don't just fly indoors. Discover our complete range of drone services including stunning aerial photography and advanced 3D modeling solutions.",
+    "aerial_3d_title": "Beyond indoor flights: aerial photography and 3D",
+    "aerial_3d_subtitle": "We do more than indoor drone work. From aerial stills to photogrammetry for exteriors and LiDAR for interiors—full-spectrum capture for marketing, documentation, and planning.",
     "aerial_photography_title": "Aerial Photography",
-    "aerial_photography_description": "Capture breathtaking aerial views of your property or location with our professional outdoor drone services. Perfect for showcasing landscapes, buildings, and properties from unique perspectives that ground-based photography simply cannot achieve.",
-    "exterior_3d_title": "Exterior 3D Models",
-    "exterior_3d_description": "Using advanced photogrammetry techniques, we can create detailed 3D models of building exteriors, construction sites, and landscapes. These models provide accurate measurements, visualization capabilities, and can be embedded on your website for interactive viewing.",
-    "interior_3d_title": "Interior LIDAR Scanning",
-    "interior_3d_description": "Our cutting-edge LIDAR technology creates precise 3D models of interior spaces. These models can be used for virtual tours, accurate measurements, furniture placement planning, and renovation visualization. Perfect for real estate, architecture, and interior design.",
-    "learn_more_cta": "Learn More About Our 3D Services"
+    "aerial_photography_description": "Crisp aerial views of your site or property—elevations and angles that ground-based photography cannot match. Ideal for showcasing terrain, architecture, and context in listings, portfolios, and communications.",
+    "exterior_3d_title": "Exterior 3D (Photogrammetry)",
+    "exterior_3d_description": "Overlapping aerial images are processed into detailed, measurable 3D models of façades, construction progress, and landforms. Reliable dimensions, as-built records, and embeddable viewers for your website when you need stakeholders to explore a site remotely.",
+    "interior_3d_title": "Interior LiDAR Scanning",
+    "interior_3d_description": "LiDAR interior scans yield precise 3D data for as-built floor plans, virtual walkthroughs, furniture layout, and renovation planning. Suited to real estate, architecture, and interior design workflows.",
+    "learn_more_cta": "Discuss aerial and 3D options"
   },
   "RealEstateModal": {
     "re_agent_cta": "Are you a real estate agent looking to showcase a property?",

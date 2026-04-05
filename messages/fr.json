@@ -126,15 +126,15 @@
     "choose_service": "Choisissez un service"
   },
   "Aerial3DSection": {
-    "aerial_3d_title": "Au-delà des vols intérieurs",
-    "aerial_3d_subtitle": "Nous ne volons pas seulement en intérieur. Découvrez notre gamme complète de services de drone, incluant la photographie aérienne et des solutions avancées de modélisation 3D.",
-    "aerial_photography_title": "Photographie Aérienne",
-    "aerial_photography_description": "Nous capturons également des vues aériennes à couper le souffle de votre bien. Parfait pour mettre en valeur des paysages, des bâtiments et des propriétés sous des angles uniques que la photographie au sol ne peut tout simplement pas atteindre.",
-    "exterior_3d_title": "Modèles 3D Extérieurs",
-    "exterior_3d_description": "Grâce à des techniques avancées de photogrammétrie, nous pouvons créer des modèles 3D détaillés d'extérieurs tels que des bâtiments, des chantiers de construction et des paysages. Ces modèles fournissent des mesures précises et peuvent être intégrés sur votre site web pour une visualisation interactive.",
-    "interior_3d_title": "Numérisation LIDAR d'Intérieur",
-    "interior_3d_description": "La technologie LIDAR crée des modèles 3D précis des espaces intérieurs. Ces modèles peuvent être utilisés pour dresser un plan de sol précis hébergable sur la [description de votre annonce](/annonce) ou la planification du placement des meubles par exemple. ",
-    "learn_more_cta": "En savoir plus sur nos services 3D"
+    "aerial_3d_title": "Au-delà du vol en intérieur : photo aérienne et 3D",
+    "aerial_3d_subtitle": "Nous ne nous limitons pas aux prises de vues indoor. Photographie aérienne, modèles 3D d'extérieur par photogrammétrie et numérisation LiDAR des intérieurs : une offre complète pour la communication, la mesure et la planification.",
+    "aerial_photography_title": "Photographie aérienne",
+    "aerial_photography_description": "Des vues aériennes nettes de votre terrain ou de votre bien : hauteurs et cadrages que la photo au sol ne permet pas. Idéal pour valoriser le contexte, l'architecture et les extérieurs dans une annonce, un portfolio ou une présentation.",
+    "exterior_3d_title": "Modèles 3D d'extérieur (photogrammétrie)",
+    "exterior_3d_description": "À partir d'images aériennes recouvrantes, nous produisons des maquettes 3D détaillées et mesurables de bâtiments, de chantiers et de reliefs. Dimensions fiables, relevés d'état et possibilité d'intégrer une visualisation interactive sur votre site pour vos clients et partenaires.",
+    "interior_3d_title": "Numérisation intérieure LiDAR",
+    "interior_3d_description": "Le LiDAR intérieur fournit des données 3D précises pour des plans d'étage à l'échelle, des visites virtuelles, l'implantation de mobilier ou la préparation de travaux. Adapté à l'immobilier, à l'architecture et au design d'intérieur.",
+    "learn_more_cta": "Discuter des options photo et 3D"
   },
   "RealEstateModal": {
     "re_agent_cta": "Vous êtes agent immobilier et souhaitez mettre en valeur un bien ?",
