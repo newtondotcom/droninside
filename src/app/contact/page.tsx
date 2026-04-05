@@ -28,8 +28,10 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { type ContactFormData, ContactFormSchema } from "@/lib/data/contact";
 import Title from "@/components/layout/title";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export default function ContactPage() {
+  const router = useRouter();
   const t = useTranslations("ContactPage");
   const tCommon = useTranslations("Common");
   const tServiceTypes = useTranslations("ServiceTypes");
@@ -247,7 +249,7 @@ export default function ContactPage() {
                     <Button
                       type="button"
                       variant="outline"
-                      onClick={() => form.reset()}
+                      onClick={() => {form.reset(); router.back()}}
                       disabled={isSubmitting}
                     >
                       {tCommon("cancel_button") || "Cancel"}
