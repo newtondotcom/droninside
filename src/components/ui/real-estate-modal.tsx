@@ -13,12 +13,7 @@ import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useTranslations } from "next-intl";
 
 export function RealEstateModal() {
@@ -27,17 +22,14 @@ export function RealEstateModal() {
 
   const features = [
     {
-      icon: "CameraIcon",
       title: t("re_feature_1_title"),
       description: t("re_feature_1_desc"),
     },
     {
-      icon: "FloorplanIcon",
       title: t("re_feature_2_title"),
       description: t("re_feature_2_desc"),
     },
     {
-      icon: "CubeIcon",
       title: t("re_feature_3_title"),
       description: t("re_feature_3_desc"),
     },
@@ -45,20 +37,20 @@ export function RealEstateModal() {
 
   const images = [
     {
-      alt: "Vue intérieure",
-      source: "/indoor.jpg",
-    },
-    {
-      alt: "Vue extérieure",
-      source: "/outdoor.jpg",
+      alt: "Photogrammétrie",
+      source: "/photogrammetry.png",
     },
     {
       alt: "Modèle 3D",
       source: "/3d-recontruction.jpg",
     },
     {
-      alt: "Photogrammétrie",
-      source: "/photogrammetry.jpg",
+      alt: "Vue extérieure",
+      source: "/outdoor.jpg",
+    },
+    {
+      alt: "Vue intérieure",
+      source: "/indoor.jpg",
     },
   ];
 
@@ -72,8 +64,7 @@ export function RealEstateModal() {
                 "absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]",
               )}
               style={{
-                WebkitMask:
-                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                 WebkitMaskComposite: "destination-out",
                 mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                 maskComposite: "subtract",
@@ -136,9 +127,8 @@ export function RealEstateModal() {
             <div className="py-10 flex flex-col gap-y-6 max-w-lg mx-auto">
               {features.map((feature, idx) => (
                 <div key={idx} className="flex items-center">
-                  <FeatureIcon name={feature.icon} />
                   <div className="ml-4">
-                    <h5 className="font-semibold text-neutral-800 dark:text-neutral-100">
+                    <h5 className="font-semibold text-neutral-800 dark:text-neutral-100 underline decoration-primary">
                       {feature.title}
                     </h5>
                     <p className="text-sm text-neutral-600 dark:text-neutral-300">
@@ -154,83 +144,11 @@ export function RealEstateModal() {
               {tCommon("cancel_button")}
             </Button>
             <Link href="/contact">
-              <Button className="px-2 py-1">
-                {tCommon("contact_us_button")}
-              </Button>
+              <Button className="px-2 py-1">{tCommon("contact_us_button")}</Button>
             </Link>
           </ModalFooter>
         </ModalBody>
       </Modal>
     </div>
   );
-}
-
-function FeatureIcon({ name }: { name: string }) {
-  switch (name) {
-    case "CameraIcon":
-      return (
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5 text-primary"
-          >
-            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-            <circle cx="12" cy="13" r="3" />
-          </svg>
-        </div>
-      );
-    case "FloorplanIcon":
-      return (
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5 text-primary"
-          >
-            <rect width="18" height="18" x="3" y="3" rx="2" />
-            <path d="M3 9h18" />
-            <path d="M9 21V9" />
-          </svg>
-        </div>
-      );
-    case "CubeIcon":
-      return (
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5 text-primary"
-          >
-            <path d="m21 16-4 4-4-4" />
-            <path d="M17 20V4" />
-            <path d="m3 8 4-4 4 4" />
-            <path d="M7 4v16" />
-          </svg>
-        </div>
-      );
-    default:
-      return null;
-  }
 }
