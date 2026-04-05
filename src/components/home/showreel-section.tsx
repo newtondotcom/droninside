@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { HeroVideoDialog } from "@/components/magicui/hero-video-dialog";
 import GridBackground from "@/components/ui/grid-bg";
 
 export default function ShowreelSection() {
