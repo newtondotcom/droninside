@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale} from 'next-intl/server';
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: "DronInside",
@@ -86,6 +87,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={cn("h-dvh bg-background font-sans antialiased")}>
       <NextIntlClientProvider>
+        <TooltipProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative flex min-h-screen flex-col">
             <Header />
@@ -93,6 +95,7 @@ export default async function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        </TooltipProvider>
         </NextIntlClientProvider>
         <Analytics />
       </body>
