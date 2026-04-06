@@ -8,10 +8,7 @@ interface AnimatedGradientTextProps {
   className?: string;
 }
 
-export default function AnimatedGradientText({
-  children,
-  className,
-}: AnimatedGradientTextProps) {
+export default function AnimatedGradientText({ children, className }: AnimatedGradientTextProps) {
   return (
     <span
       className={cn(

@@ -15,9 +15,7 @@ interface HandWrittenTitleProps {
   subtitle?: string;
 }
 
-export default function HandWrittenWord({
-  word = "DronInside",
-}: HandWrittenTitleProps) {
+export default function HandWrittenWord({ word = "DronInside" }: HandWrittenTitleProps) {
   const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {

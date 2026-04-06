@@ -1,7 +1,5 @@
 # Prompt
 
-> Make on commit per point
-
 ## Mobile version
 
 ## Use motion to animate sections contents on appearing, be creative with shaking, translattion along x and y axis.
@@ -15,6 +13,7 @@
 ## Utiliser le composant Title dans la section aerial-3d.
 
 ## Créer la page type d'une annonce immobilière
+
 - Photos
 - Plan 2d interactif avec des chiffres
 - Modèle 3D interactif de l'extérieur
@@ -33,7 +32,7 @@ Contenu diversifié en incluant des tableaux des quotes des emojis dans la mesur
 
 # Version mobile
 
-# Hero Video Dialog on mobile : use deep link
+# Hero Video Dialog on mobile : use deep link for youtube
 
 # Long term :
 

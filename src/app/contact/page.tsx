@@ -107,11 +107,7 @@ export default function ContactPage() {
               <p className="text-green-700 dark:text-green-400">
                 {formResponse.message || t("response_message")}
               </p>
-              <Button
-                variant="outline"
-                className="mt-6"
-                onClick={() => setFormResponse({})}
-              >
+              <Button variant="outline" className="mt-6" onClick={() => setFormResponse({})}>
                 {t("send_another_message")}
               </Button>
             </motion.div>
@@ -130,9 +126,7 @@ export default function ContactPage() {
                 >
                   {formResponse.success === false && (
                     <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md p-4 mb-6">
-                      <p className="text-red-700 dark:text-red-400">
-                        {formResponse.message}
-                      </p>
+                      <p className="text-red-700 dark:text-red-400">{formResponse.message}</p>
                     </div>
                   )}
 
@@ -144,10 +138,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>{t("full_name")}</FormLabel>
                           <FormControl>
-                            <Input
-                              placeholder={t("full_name_placeholder")}
-                              {...field}
-                            />
+                            <Input placeholder={t("full_name_placeholder")} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -161,11 +152,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>{t("email")}</FormLabel>
                           <FormControl>
-                            <Input
-                              type="email"
-                              placeholder={t("email_placeholder")}
-                              {...field}
-                            />
+                            <Input type="email" placeholder={t("email_placeholder")} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -181,10 +168,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>{t("phone_number")}</FormLabel>
                           <FormControl>
-                            <Input
-                              placeholder={t("phone_number_Placeholder")}
-                              {...field}
-                            />
+                            <Input placeholder={t("phone_number_Placeholder")} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -196,26 +180,16 @@ export default function ContactPage() {
                       name="serviceType"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>
-                            {tServiceTypes("choose_service")}
-                          </FormLabel>
-                          <Select
-                            onValueChange={field.onChange}
-                            defaultValue={field.value}
-                          >
+                          <FormLabel>{tServiceTypes("choose_service")}</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue
-                                  placeholder={t("select_placeholder")}
-                                />
+                                <SelectValue placeholder={t("select_placeholder")} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               {serviceTypes.map((service) => (
-                                <SelectItem
-                                  key={service.value}
-                                  value={service.value}
-                                >
+                                <SelectItem key={service.value} value={service.value}>
                                   {service.label}
                                 </SelectItem>
                               ))}
@@ -249,7 +223,10 @@ export default function ContactPage() {
                     <Button
                       type="button"
                       variant="outline"
-                      onClick={() => {form.reset(); router.back()}}
+                      onClick={() => {
+                        form.reset();
+                        router.back();
+                      }}
                       disabled={isSubmitting}
                     >
                       {tCommon("cancel_button") || "Cancel"}
@@ -257,10 +234,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className={cn(
-                        "relative",
-                        isSubmitting && "text-transparent",
-                      )}
+                      className={cn("relative", isSubmitting && "text-transparent")}
                     >
                       {tCommon("send_button") || "Send"}
                       {isSubmitting && (

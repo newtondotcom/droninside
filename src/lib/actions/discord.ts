@@ -1,17 +1,11 @@
 "use server";
 import { z } from "zod";
-import {
-  type ContactFormData,
-  ContactFormSchema,
-  type SubmitResponse,
-} from "@/lib/data/contact";
+import { type ContactFormData, ContactFormSchema, type SubmitResponse } from "@/lib/data/contact";
 
 // Discord webhook URL
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK;
 
-export async function submitContactForm(
-  formData: ContactFormData,
-): Promise<SubmitResponse> {
+export async function submitContactForm(formData: ContactFormData): Promise<SubmitResponse> {
   try {
     // Validate the form data
     const validatedData = ContactFormSchema.parse(formData);
@@ -84,9 +78,7 @@ export async function submitContactForm(
 
     // Check if it's a Zod validation error
     if (error instanceof z.ZodError) {
-      const errorMessages = error.issues
-        .map((err) => `${err.path}: ${err.message}`)
-        .join(", ");
+      const errorMessages = error.issues.map((err) => `${err.path}: ${err.message}`).join(", ");
       return {
         success: false,
         message: `Validation error: ${errorMessages}`,
@@ -95,8 +87,7 @@ export async function submitContactForm(
 
     return {
       success: false,
-      message:
-        "There was an error sending your message. Please try again later.",
+      message: "There was an error sending your message. Please try again later.",
     };
   }
 }

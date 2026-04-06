@@ -49,9 +49,7 @@ export default function ServicePage() {
       </div>
 
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-6">
-          {tServiceDetail("related_videos")}
-        </h2>
+        <h2 className="text-2xl font-semibold mb-6">{tServiceDetail("related_videos")}</h2>
 
         {relatedVideos.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -60,17 +58,12 @@ export default function ServicePage() {
             ))}
           </div>
         ) : (
-          <NoVideosPlaceholder
-            serviceTitle={serviceTitle}
-            tServiceDetail={tServiceDetail}
-          />
+          <NoVideosPlaceholder serviceTitle={serviceTitle} tServiceDetail={tServiceDetail} />
         )}
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-lg mb-6">
-          {tServiceDetail("interested_in_service")}
-        </p>
+        <p className="text-lg mb-6">{tServiceDetail("interested_in_service")}</p>
         <Link href="/contact">
           <Button className="font-semibold text-lg py-4 px-6">
             {tCommon("contact_us_button")}
@@ -118,9 +111,7 @@ function VideoCard({ video, tVideo }: VideoCardProps) {
         </div>
       </div>
       <div className="p-4">
-        <h3 className="font-semibold text-lg mb-2">
-          {tVideo(video.descriptionKey)}
-        </h3>
+        <h3 className="font-semibold text-lg mb-2">{tVideo(video.descriptionKey)}</h3>
       </div>
     </motion.div>
   );
@@ -145,9 +136,7 @@ function NoVideosPlaceholder({ tServiceDetail }: NoVideosPlaceholderProps) {
       <div className="mx-auto w-16 h-16 mb-4 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
         <Video className="h-8 w-8 text-neutral-500 dark:text-neutral-400" />
       </div>
-      <h3 className="text-xl font-medium mb-2">
-        {tServiceDetail("no_videos_title")}
-      </h3>
+      <h3 className="text-xl font-medium mb-2">{tServiceDetail("no_videos_title")}</h3>
       <p className="text-neutral-600 dark:text-neutral-400 mb-6">
         {tServiceDetail("no_videos_message")}
       </p>

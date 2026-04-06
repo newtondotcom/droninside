@@ -38,14 +38,10 @@ export default function ServicesSection() {
             <h2 className="text-2xl font-bold text-black dark:text-white md:text-3xl">
               {t("video_description")}
             </h2>
-            <p className="block text-black dark:text-white md:mt-4">
-              {t("video_text")}
-            </p>
+            <p className="block text-black dark:text-white md:mt-4">{t("video_text")}</p>
             <div className="mt-4 md:mt-8">
               <Link href={"/contact"}>
-                <Button className="font-semibold text-lg py-4 px-6">
-                  {t("get_started")}
-                </Button>
+                <Button className="font-semibold text-lg py-4 px-6">{t("get_started")}</Button>
               </Link>
             </div>
 

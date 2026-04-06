@@ -7,11 +7,7 @@ interface GridBackgroundProps {
   children?: React.ReactNode;
 }
 
-export default function GridBackground({
-  title,
-  className,
-  children,
-}: GridBackgroundProps) {
+export default function GridBackground({ title, className, children }: GridBackgroundProps) {
   return (
     <div
       className={cn(
