@@ -53,8 +53,8 @@ const Footer = () => {
         </p>
 
         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-          {links.map(({ path, key }) => (
-            <li key={key}>
+          {Object.entries(links).map(([path, { name }], index) => (
+            <li key={index}>
               <Link href={path}>
                 <button
                   className={cn(
@@ -62,16 +62,14 @@ const Footer = () => {
                     pathname === path ? "text-primary/60" : "",
                   )}
                 >
-                  {tNav(key)}
+                  {tNav(name)}
                 </button>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="mt-12 flex justify-center text-primary">
-          {tCommon("made_from")}
-        </div>
+        <div className="mt-12 flex justify-center text-primary">{tCommon("made_from")}</div>
 
         <ul className="mt-12 flex justify-center gap-6 md:gap-8">
           {socialLinks.map(({ href, label, icon }) => (

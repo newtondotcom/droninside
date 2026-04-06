@@ -1,9 +1,19 @@
-const links = [
-  { path: "/", key: "home" },
-  { path: "/services", key: "services" },
-  { path: "/portfolio", key: "portfolio" },
-  { path: "/faq", key: "faq" },
-  { path: "/contact", key: "contact" },
-];
+const links = {
+  "/": {
+    name: "home",
+  },
+  "/services": {
+    name: "services",
+  },
+  "/portfolio": {
+    name: "portfolio",
+  },
+  "/faq": {
+    name: "faq",
+  },
+  "/contact": {
+    name: "contact",
+  },
+};
 
 export default links;

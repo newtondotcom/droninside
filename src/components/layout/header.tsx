@@ -12,6 +12,7 @@ import { motion, type Variants } from "motion/react";
 import Logo from "@/components/ui/logo";
 import LocalePicker from "@/components/layout/locale-picker";
 import { useTranslations } from "next-intl";
+import { MorphicNavbar } from "@/components/kokonutui/morphic-navbar";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,22 +55,8 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <nav
-          className="hidden md:flex gap-4 sm:gap-6"
-          aria-label="Main navigation"
-        >
-          {links.map(({ path, key }) => (
-            <Link
-              key={key}
-              href={path}
-              className={cn(
-                "text-sm font-medium hover:underline underline-offset-4",
-                pathname === path && "text-primary font-semibold",
-              )}
-            >
-              {t(key)}
-            </Link>
-          ))}
+        <nav className="hidden md:flex gap-4 sm:gap-6" aria-label="Main navigation">
+          <MorphicNavbar />
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -98,12 +85,12 @@ export default function Header() {
         initial="closed"
         animate={mobileMenuOpen ? "open" : "closed"}
         variants={mobileMenuVariants}
-        className="fixed top-16 left-0 w-full md:hidden flex flex-col gap-4 p-4 border-b bg-white shadow-md dark:bg-background dark:border-border pt-8 items-center z-40"
+        className="fixed top-16 left-0 w-full md:hidden flex flex-col gap-4 p-4 border-b bg-white shadow-md dark:bg-background dark:border-border pt-8 items-center z-40 bg-opacity-50"
         aria-label="Mobile navigation"
       >
-        {links.map(({ path, key }) => (
+        {Object.entries(links).map(([path, { name }], index) => (
           <Link
-            key={key}
+            key={index}
             href={path}
             className={cn(
               "text-sm font-semibold",
@@ -111,7 +98,7 @@ export default function Header() {
             )}
             onClick={toggleMobileMenu}
           >
-            {t(key)}
+            {t(name)}
           </Link>
         ))}
       </motion.nav>
