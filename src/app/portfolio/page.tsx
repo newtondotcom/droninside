@@ -31,7 +31,7 @@ export default function Portfolio() {
                 thumbnailAlt="Projet ${video.id}"
               />
             </div>
-            <h2 className="text-center text-sm font-semibold text-neutral-700 mt-4">
+            <h2 className="text-center text-sm font-semibold text-neutral-700 mt-4 dark:text-neutral-400 hover:scale-105 transition-all duration-300">
               {tVideo(video.descriptionKey)}
             </h2>
           </div>
