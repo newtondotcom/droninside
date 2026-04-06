@@ -4,10 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import services from "@/lib/data/services";
 import { useTranslations } from "next-intl";
+import { MagicCard } from "@/components/magicui/magic-card";
+import { useTheme } from "next-themes";
 
 const Services = () => {
   const t = useTranslations("ServicesPage");
   const tCommon = useTranslations("Common");
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <div className="flex flex-col mt-20">
@@ -17,35 +21,33 @@ const Services = () => {
         {services.map((service) => (
           <Link key={service.key} href={"/service/" + service.key}>
             <div className="border rounded-lg shadow-lg overflow-hidden h-full">
-              <div className="p-4 text-left">
-                <h2 className="text-lg font-semibold">
-                  {t(service.key + "_title")}
-                </h2>
-                <p className="text-gray-600 min-h-20">
-                  {t(service.key + "_description")}
-                </p>
-              </div>
-              <div className="px-2">
-                <Image
-                  alt={service.key + "_title"}
-                  src={service.img || "/placeholder.svg"}
-                  className="w-full object-cover rounded-sm"
-                  height={576}
-                  width={1024}
-                />
-              </div>
-              <div className="p-4 flex justify-between text-sm text-gray-600">
-                <div>
-                  <p>{t("services_duration")}</p>
-                  <p className="font-semibold text-primary">
-                    + {service.duration} min
+              <MagicCard gradientColor={isDark ? "#262626" : "#D9D9D955"} className="p-0">
+                <div className="p-4 text-left">
+                  <h2 className="text-lg font-semibold">{t(service.key + "_title")}</h2>
+                  <p className="text-gray-600 dark:text-gray-400 min-h-20">
+                    {t(service.key + "_description")}
                   </p>
                 </div>
-                <div>
-                  <p>{t("services_price")}</p>
-                  <p className="font-semibold text-primary">{service.price}€</p>
+                <div className="px-2">
+                  <Image
+                    alt={service.key + "_title"}
+                    src={service.img || "/placeholder.svg"}
+                    className="w-full object-cover rounded-sm"
+                    height={576}
+                    width={1024}
+                  />
                 </div>
-              </div>
+                <div className="p-4 flex justify-between text-sm text-gray-600">
+                  <div>
+                    <p>{t("services_duration")}</p>
+                    <p className="font-semibold text-primary">+ {service.duration} min</p>
+                  </div>
+                  <div>
+                    <p>{t("services_price")}</p>
+                    <p className="font-semibold text-primary">{service.price}€</p>
+                  </div>
+                </div>
+              </MagicCard>
             </div>
           </Link>
         ))}
