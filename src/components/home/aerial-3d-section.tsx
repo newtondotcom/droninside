@@ -8,10 +8,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { useTranslations } from "next-intl";
-import Btn13 from "@/components/kokonutui/btn-13";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useTheme } from "next-themes";
+import GradientButton from "@/components/kokonutui/gradient-button";
 
 type ServiceCardProps = {
   icon: React.ReactNode;
@@ -144,7 +144,10 @@ export default function Aerial3DSection() {
           className="mt-12 text-center"
         >
           <Link href="/contact">
-            <Btn13 className="font-semibold text-lg py-4 px-6" label={t("learn_more_cta")} />
+            <GradientButton
+              className="font-semibold text-lg py-4 px-6"
+              label={t("learn_more_cta")}
+            />
           </Link>
         </motion.div>
       </div>
