@@ -5,38 +5,40 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Languages } from "lucide-react";
 import { useTransition } from "react";
 import type { Locale } from "@/i18n/config";
 import { setUserLocale } from "@/i18n/locale";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 
 export default function LocalePicker() {
+  const locale = useLocale() as Locale;
   const [isPending, startTransition] = useTransition();
 
   const onChange = (value: string) => {
     const locale = value as Locale;
     startTransition(() => {
       setUserLocale(locale);
-      // Reload the page to apply the new locale
-      window.location.reload();
     });
   };
 
   return (
-    <Select defaultValue="fr" onValueChange={onChange}>
+    <Select value={locale} onValueChange={onChange}>
       <SelectTrigger
         className={cn(
-          "w-[60px] border-none backdrop-blur-md bg-white/10 dark:bg-dark/10",
+          "min-w-[60px] border-none backdrop-blur-md bg-white/10 dark:bg-dark/10",
           isPending && "pointer-events-none opacity-60",
         )}
       >
-        <Languages />
+        <Languages className="size-4" />
+        <SelectValue />
       </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="fr">Français</SelectItem>
-        <SelectItem value="en">English</SelectItem>
+      <SelectContent className="min-w-[60px]">
+        <SelectItem value="fr">FR</SelectItem>
+        <SelectItem value="en">EN</SelectItem>
       </SelectContent>
     </Select>
   );
